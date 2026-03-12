@@ -110,3 +110,39 @@ plt.tight_layout()
 plt.savefig('monthly_trend.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
 plt.show()
 
+
+# ── CELL 6 : Plot 3 — Basket Size Histogram + Box Plot ──────
+basket_sizes = [len(t) for t in transactions]
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+# Histogram
+axes[0].hist(basket_sizes, bins=30, color=CYAN, edgecolor='#0f0f1a', alpha=0.85)
+axes[0].axvline(np.mean(basket_sizes), color=PINK, linewidth=2,
+                label=f'Mean = {np.mean(basket_sizes):.1f}')
+axes[0].axvline(np.median(basket_sizes), color=ORANGE, linewidth=2,
+                linestyle='--', label=f'Median = {int(np.median(basket_sizes))}')
+axes[0].set_title('Basket Size — Distribution', fontsize=13, fontweight='bold')
+axes[0].set_xlabel('Items per Transaction')
+axes[0].set_ylabel('Frequency')
+axes[0].legend(fontsize=9)
+axes[0].grid(axis='y')
+
+# Box plot
+axes[1].boxplot(basket_sizes, patch_artist=True,
+                boxprops=dict(facecolor=PURPLE, alpha=0.6, color=PURPLE),
+                medianprops=dict(color=PINK, linewidth=2.5),
+                whiskerprops=dict(color='#aaa'),
+                capprops=dict(color='#aaa'),
+                flierprops=dict(marker='o', color=CYAN, alpha=0.4, markersize=3))
+axes[1].set_title('Basket Size — Box Plot', fontsize=13, fontweight='bold')
+axes[1].set_ylabel('Items per Transaction')
+axes[1].grid(axis='y')
+
+fig.suptitle('How Many Items Do Customers Buy Per Visit?',
+             fontsize=15, fontweight='bold', y=1.02)
+plt.tight_layout()
+plt.savefig('basket_size.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
+plt.show()
+
+
