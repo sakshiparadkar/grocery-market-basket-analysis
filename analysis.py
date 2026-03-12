@@ -72,3 +72,41 @@ ax.grid(axis='x')
 plt.tight_layout()
 plt.savefig('plot1_top20_items.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
 plt.show()
+
+
+# ── CELL 5 : Plot 2 — Monthly Transactions Trend ────────────
+monthly = df.groupby('Month').size().reset_index(name='count')
+monthly['Month_str'] = monthly['Month'].astype(str)
+x = range(len(monthly))
+
+fig, ax = plt.subplots(figsize=(15, 5))
+ax.fill_between(x, monthly['count'], alpha=0.2, color=PURPLE)
+ax.plot(x, monthly['count'], color=PURPLE, linewidth=2.5, marker='o', markersize=5)
+
+# Annotate peak
+peak_idx = monthly['count'].idxmax()
+ax.annotate(f"📈 Peak\n{monthly.loc[peak_idx, 'count']} transactions",
+            xy=(peak_idx, monthly.loc[peak_idx, 'count']),
+            xytext=(peak_idx + 1, monthly.loc[peak_idx, 'count'] + 50),
+            arrowprops=dict(arrowstyle='->', color=PINK, lw=1.5),
+            fontsize=9, color=PINK)
+
+# Annotate lowest
+low_idx = monthly['count'].idxmin()
+ax.annotate(f"📉 Low\n{monthly.loc[low_idx, 'count']}",
+            xy=(low_idx, monthly.loc[low_idx, 'count']),
+            xytext=(low_idx + 1, monthly.loc[low_idx, 'count'] - 80),
+            arrowprops=dict(arrowstyle='->', color=CYAN, lw=1.5),
+            fontsize=9, color=CYAN)
+
+ax.set_xticks(list(x))
+ax.set_xticklabels(monthly['Month_str'], rotation=45, ha='right', fontsize=8)
+ax.set_title('Monthly Transaction Volume — Trend Analysis',
+             fontsize=15, fontweight='bold', pad=15)
+ax.set_xlabel('Month')
+ax.set_ylabel('Number of Transactions')
+ax.grid(axis='y')
+plt.tight_layout()
+plt.savefig('monthly_trend.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
+plt.show()
+
