@@ -52,3 +52,23 @@ print("Unique customers:", df['Member_number'].nunique())
 # Build transactions
 transactions = df.groupby('Member_number')['itemDescription'].apply(list).tolist()
 print(f"\n✅ Transactions ready: {len(transactions)}")
+
+
+
+# ── CELL 4 : Plot 1 — Top 20 Most Purchased Items ───────────
+item_counts = df['itemDescription'].value_counts().head(20)
+
+fig, ax = plt.subplots(figsize=(12, 7))
+colors = [ACCENT[i % len(ACCENT)] for i in range(20)]
+ax.barh(item_counts.index[::-1], item_counts.values[::-1],
+        color=colors, edgecolor='none', height=0.7)
+
+for i, val in enumerate(item_counts.values[::-1]):
+    ax.text(val + 30, i, f'{val:,}', va='center', fontsize=8.5, color='#ccc')
+
+ax.set_xlabel('Number of Purchases')
+ax.set_title('Top 20 Most Purchased Grocery Items', fontsize=15, fontweight='bold', pad=15)
+ax.grid(axis='x')
+plt.tight_layout()
+plt.savefig('plot1_top20_items.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
+plt.show()
