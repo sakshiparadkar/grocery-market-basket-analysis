@@ -168,3 +168,27 @@ ax.grid(axis='x')
 plt.tight_layout()
 plt.savefig('plot8_top20_rules.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
 plt.show()
+
+# ── CELL 7 : Plot 8 — Top 20 Association Rules Bar Chart ───
+top20 = strong_rules.head(20).copy()
+top20['rule'] = top20['antecedents_str'] + '  →  ' + top20['consequents_str']
+
+colors = plt.cm.plasma(np.linspace(0.15, 0.92, 20))
+fig, ax = plt.subplots(figsize=(13, 9))
+
+bars = ax.barh(top20['rule'][::-1], top20['lift'][::-1],
+               color=colors[::-1], edgecolor='none', height=0.65)
+
+for bar, val in zip(bars, top20['lift'][::-1]):
+    ax.text(val + 0.01, bar.get_y() + bar.get_height() / 2,
+            f'{val:.2f}', va='center', fontsize=8.5, color='white')
+
+ax.axvline(1, color='#aaa', linestyle='--', linewidth=1.2, label='Baseline (Lift = 1)')
+ax.set_title('Top 20 Association Rules — Ranked by Lift',
+             fontsize=14, fontweight='bold', pad=15)
+ax.set_xlabel('Lift Value', fontsize=12)
+ax.legend(fontsize=9)
+ax.grid(axis='x')
+plt.tight_layout()
+plt.savefig('plot8_top20_rules.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
+plt.show()
