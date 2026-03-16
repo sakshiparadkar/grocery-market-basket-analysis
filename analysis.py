@@ -192,3 +192,29 @@ ax.grid(axis='x')
 plt.tight_layout()
 plt.savefig('plot8_top20_rules.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
 plt.show()
+
+# ── CELL 8 : Plot 9 — Co-occurrence Heatmap ────────────────
+top_items = df['itemDescription'].value_counts().head(12).index.tolist()
+df_top = df[df['itemDescription'].isin(top_items)]
+basket_top = df_top.groupby('Member_number')['itemDescription'].apply(list)
+
+cooc = pd.DataFrame(0, index=top_items, columns=top_items)
+for items in basket_top:
+    unique_items = list(set(items))
+    for i in unique_items:
+        for j in unique_items:
+            if i != j:
+                cooc.loc[i, j] += 1
+
+mask = np.eye(len(cooc), dtype=bool)
+fig, ax = plt.subplots(figsize=(12, 10))
+sns.heatmap(cooc, mask=mask, annot=True, fmt='d', cmap='magma',
+            linewidths=0.5, linecolor='#0f0f1a',
+            cbar_kws={'label': 'Co-occurrence Count'}, ax=ax)
+ax.set_title('Top 12 Items — Co-occurrence Heatmap',
+             fontsize=14, fontweight='bold', pad=15)
+ax.set_xticklabels(ax.get_xticklabels(), rotation=35, ha='right', fontsize=9)
+ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=9)
+plt.tight_layout()
+plt.savefig('plot9_heatmap.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
+plt.show()
