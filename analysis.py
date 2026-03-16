@@ -218,3 +218,56 @@ ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=9)
 plt.tight_layout()
 plt.savefig('plot9_heatmap.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
 plt.show()
+
+
+# ── CELL 9 : Plot 10 — Network Graph ───────────────────────
+top_net = strong_rules.head(35)
+
+G = nx.DiGraph()
+for _, row in top_net.iterrows():
+    G.add_edge(row['antecedents_str'], row['consequents_str'],
+               weight=row['lift'], conf=row['confidence'])
+
+fig, ax = plt.subplots(figsize=(18, 13))
+fig.patch.set_facecolor('#0a0a14')
+ax.set_facecolor('#0a0a14')
+
+pos = nx.spring_layout(G, k=3.0, seed=42, iterations=80)
+
+degrees     = dict(G.degree())
+node_sizes  = [500 + degrees[n] * 400 for n in G.nodes()]
+node_colors = [degrees[n] for n in G.nodes()]
+
+edge_weights = [G[u][v]['weight'] for u, v in G.edges()]
+w_min, w_max = min(edge_weights), max(edge_weights)
+edge_norm    = [(w - w_min) / (w_max - w_min + 1e-9) for w in edge_weights]
+
+nx.draw_networkx_edges(G, pos, ax=ax,
+    edge_color=edge_norm, edge_cmap=plt.cm.plasma,
+    width=[1.5 + 3 * n for n in edge_norm],
+    arrows=True, arrowsize=18,
+    connectionstyle='arc3,rad=0.12', alpha=0.85)
+
+nx.draw_networkx_nodes(G, pos, ax=ax,
+    node_size=node_sizes,
+    node_color=node_colors, cmap=plt.cm.cool,
+    alpha=0.95)
+
+nx.draw_networkx_labels(G, pos, ax=ax,
+    font_size=8, font_color='white', font_weight='bold')
+
+sm = plt.cm.ScalarMappable(cmap=plt.cm.plasma,
+     norm=plt.Normalize(w_min, w_max))
+sm.set_array([])
+cbar = plt.colorbar(sm, ax=ax, shrink=0.55, pad=0.01)
+cbar.set_label('Lift', color='white', fontsize=12)
+cbar.ax.yaxis.set_tick_params(color='white')
+plt.setp(cbar.ax.yaxis.get_ticklabels(), color='white')
+
+ax.set_title('Association Rules — Network Graph\n'
+             'Node size = connections  |  Edge color = Lift strength',
+             fontsize=16, fontweight='bold', color='white', pad=20)
+ax.axis('off')
+plt.tight_layout()
+plt.savefig('plot10_network_graph.png', dpi=150, bbox_inches='tight', facecolor='#0a0a14')
+plt.show()
