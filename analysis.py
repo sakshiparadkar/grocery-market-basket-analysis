@@ -272,4 +272,32 @@ plt.tight_layout()
 plt.savefig('plot10_network_graph.png', dpi=150, bbox_inches='tight', facecolor='#0a0a14')
 plt.show()
 
+# ── CELL 11 : Plot 7 — Support vs Lift Scatter ──────────────
+fig, ax = plt.subplots(figsize=(12, 6))
+
+sc = ax.scatter(
+    rules['support'],
+    rules['lift'],
+    c=rules['confidence'],
+    cmap='cool',
+    s=50,
+    alpha=0.7,
+    edgecolors='none'
+)
+
+cbar = plt.colorbar(sc, ax=ax)
+cbar.set_label('Confidence', color='white', fontsize=11)
+cbar.ax.yaxis.set_tick_params(color='white')
+plt.setp(cbar.ax.yaxis.get_ticklabels(), color='white')
+
+ax.axhline(y=1, color='#aaa', linestyle='--', linewidth=1.2, label='Lift = 1 (baseline)')
+ax.set_title('Support vs Lift  (Color = Confidence)',
+             fontsize=14, fontweight='bold', pad=15)
+ax.set_xlabel('Support', fontsize=12)
+ax.set_ylabel('Lift', fontsize=12)
+ax.legend(fontsize=9)
+ax.grid(True)
+plt.tight_layout()
+plt.savefig('plot7_support_vs_lift.png', dpi=150, bbox_inches='tight', facecolor='#0f0f1a')
+plt.show()
 
