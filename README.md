@@ -4,7 +4,6 @@
 
 This project performs **Market Basket Analysis (MBA)** on a grocery dataset to uncover customer purchasing patterns. Using association rule mining techniques, we identify which items are frequently bought together and visualize insights through interactive and aesthetic plots.
 
----
 
 ## 🎯 Objectives
 
@@ -13,7 +12,6 @@ This project performs **Market Basket Analysis (MBA)** on a grocery dataset to u
 * Discover strong association rules between products
 * Visualize trends, patterns, and relationships in data
 
----
 
 ## 🧰 Tech Stack
 
@@ -24,7 +22,6 @@ This project performs **Market Basket Analysis (MBA)** on a grocery dataset to u
 * **NetworkX** — Network graph visualization
 * **WordCloud** — Text visualization
 
----
 
 ## 📂 Dataset Details
 
@@ -35,7 +32,7 @@ This project performs **Market Basket Analysis (MBA)** on a grocery dataset to u
   * `Date` → Transaction date
   * `itemDescription` → Purchased item
 
----
+
 
 ## ⚙️ Project Workflow
 
@@ -61,7 +58,7 @@ This project performs **Market Basket Analysis (MBA)** on a grocery dataset to u
   * **Confidence**
   * **Lift**
 
----
+
 
 ## 📊 Visualizations
 
@@ -96,7 +93,6 @@ This project performs **Market Basket Analysis (MBA)** on a grocery dataset to u
 * Color-coded by confidence
 * Helps identify strong and reliable rules
 
----
 
 ## 📈 Key Insights
 
@@ -105,7 +101,6 @@ This project performs **Market Basket Analysis (MBA)** on a grocery dataset to u
 * Most customers purchase a moderate number of items per visit
 * High lift rules indicate strong product associations
 
----
 
 ## 💡 Applications
 
@@ -114,7 +109,6 @@ This project performs **Market Basket Analysis (MBA)** on a grocery dataset to u
 * Targeted marketing & promotions
 * Inventory management
 
----
 
 ## 📌 Future Improvements
 
@@ -122,13 +116,12 @@ This project performs **Market Basket Analysis (MBA)** on a grocery dataset to u
 * Add real-time recommendations
 * Integrate user segmentation (clustering)
 
----
 
 ## 🙌 Conclusion
 
 This project demonstrates how data-driven insights can help businesses understand customer behavior and improve decision-making using **Market Basket Analysis**.
 
----
+
 
 ✨ *If you like this project, give it a ⭐ on GitHub!*
 
