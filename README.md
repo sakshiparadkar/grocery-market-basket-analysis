@@ -62,22 +62,34 @@ WORDCLOUD
 ![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot3_wordcloud.png)
 
 📈 Key Insights
+
 Certain items are frequently purchased together → useful for cross-selling
+
 Peak shopping months identified → helps in inventory planning
+
 Most customers purchase a moderate number of items per visit
+
 High lift rules indicate strong product associations
 
 💡 Applications
+
 Product recommendation systems
+
 Store layout optimization
+
 Targeted marketing & promotions
+
 Inventory management
 
 🚀 Future Improvements
+
 Deploy as a Streamlit Web App
+
 Add real-time recommendation system
+
 Integrate customer segmentation (clustering)
 
 🙌 Conclusion
 This project demonstrates how data-driven insights can help businesses understand customer behavior and improve decision-making using Market Basket Analysis.
+
 If you like this project, consider giving it a ⭐ on GitHub!
