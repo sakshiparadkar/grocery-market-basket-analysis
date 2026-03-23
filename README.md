@@ -1,17 +1,24 @@
 🛒 Market Basket Analysis — Grocery Dataset
+
 📌 Project Overview
 This project performs Market Basket Analysis (MBA) on a grocery dataset to uncover customer purchasing patterns. Using association rule mining techniques, it identifies which items are frequently bought together and presents insights through clean and visually appealing plots.
 
 🎯 Objectives
+
 1.Analyze customer transaction behavior
+
 2.Identify frequently purchased items
+
 3.Discover strong association rules between products
+
 4.Visualize trends, patterns, and relationships in data
 
 🧰 Tech Stack
+
 Python |Pandas, NumPy| Matplotlib, Seaborn | mlxtend | NetworkX | WordCloud 
 
 📂 Dataset Details
+
 File: Groceries_dataset.csv
 Columns:
 Member_number → Customer ID
@@ -19,18 +26,40 @@ Date → Transaction date
 itemDescription → Purchased item
 
 ⚙️ Project Workflow
+
 1️⃣ Data Preprocessing
+
 2️⃣ Exploratory Data Analysis (EDA)
+
 3️⃣ Market Basket Analysis
+
 Applied Apriori Algorithm
 Generated Association Rules
 
 📊 Visualizations
-![Top Items](images/top_items.png)
-![Monthly Trends](images/monthly_trends.png)
-![Basket Size](images/basket_size.png)
-![Heatmap](images/heatmap.png)
-![Network](images/network_graph.png)
+TOP 20 ITEMS
+![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot1_top20_items.png)
+BASKET SIZE
+![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot2_basket_size.png)
+PIE CHART
+![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot4_pie_chart.png)
+FRQUENT ITEMSETS
+![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot5_frequent_itemsets.png)
+BUBBLE CHART
+![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot6_bubble_chart.png)
+SUPPORT VS LIFT
+![image alt](
+https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot7_support_vs_lift.png)
+TOP20 RULES
+![image alt](
+https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot8_top20_rules.png)
+HEATMAP
+![image alt](
+https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot9_heatmap.png)
+NETWORK GRAPH
+![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot10_network_graph.png)
+WORDCLOUD
+![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot3_wordcloud.png)
 
 📈 Key Insights
 Certain items are frequently purchased together → useful for cross-selling
