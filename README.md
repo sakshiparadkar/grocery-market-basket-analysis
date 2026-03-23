@@ -20,10 +20,15 @@ Python |Pandas, NumPy| Matplotlib, Seaborn | mlxtend | NetworkX | WordCloud
 📂 Dataset Details
 
 File: Groceries_dataset.csv
+
 Columns:
+
 Member_number → Customer ID
+
 Date → Transaction date
+
 itemDescription → Purchased item
+
 
 ⚙️ Project Workflow
 
