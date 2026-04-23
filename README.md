@@ -1,9 +1,9 @@
-🛒 Market Basket Analysis — Grocery Dataset
+## 🛒 Market Basket Analysis — Grocery Dataset
 
-📌 Project Overview
+## 📌 Project Overview
 This project performs Market Basket Analysis (MBA) on a grocery dataset to uncover customer purchasing patterns. Using association rule mining techniques, it identifies which items are frequently bought together and presents insights through clean and visually appealing plots.
 
-🎯 Objectives
+## 🎯 Objectives
 
 1.Analyze customer transaction behavior
 
@@ -13,24 +13,24 @@ This project performs Market Basket Analysis (MBA) on a grocery dataset to uncov
 
 4.Visualize trends, patterns, and relationships in data
 
-🧰 Tech Stack
+## 🧰 Tech Stack
 
 Python |Pandas, NumPy| Matplotlib, Seaborn | mlxtend | NetworkX | WordCloud 
 
-📂 Dataset Details
+## 📂 Dataset Details
 
-File: Groceries_dataset.csv
+✔️ File: Groceries_dataset.csv
 
-Columns:
+✔️ Columns:
 
-Member_number → Customer ID
+✔️ Member_number → Customer ID
 
-Date → Transaction date
+✔️ Date → Transaction date
 
-itemDescription → Purchased item
+✔️ itemDescription → Purchased item
 
 
-⚙️ Project Workflow
+## ⚙️ Project Workflow
 
 1️⃣ Data Preprocessing
 
@@ -38,55 +38,56 @@ itemDescription → Purchased item
 
 3️⃣ Market Basket Analysis
 
-Applied Apriori Algorithm
-Generated Association Rules
+4️⃣ Applied Apriori Algorithm
 
-📊 Visualizations
-TOP 20 ITEMS
+5️⃣Generated Association Rules
+
+## 📊 Visualizations
+## TOP 20 ITEMS
 ![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot1_top20_items.png)
-BASKET SIZE
+## BASKET SIZE
 ![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot2_basket_size.png)
-PIE CHART
+## PIE CHART
 ![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot4_pie_chart.png)
-FRQUENT ITEMSETS
+## FREQUENT ITEMSETS
 ![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot5_frequent_itemsets.png)
-BUBBLE CHART
+## BUBBLE CHART
 ![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot6_bubble_chart.png)
-SUPPORT VS LIFT
+## SUPPORT VS LIFT
 ![image alt](
 https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot7_support_vs_lift.png)
-TOP20 RULES
+## TOP20 RULES
 ![image alt](
 https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot8_top20_rules.png)
-HEATMAP
+## HEATMAP
 ![image alt](
 https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot9_heatmap.png)
-NETWORK GRAPH
+## NETWORK GRAPH
 ![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot10_network_graph.png)
-WORDCLOUD
+## WORDCLOUD
 ![image alt](https://github.com/sakshiparadkar/grocery-market-basket-analysis/blob/279a1776f7ee4cab0400b4ba4577a221e0ad7022/plot3_wordcloud.png)
 
-📈 Key Insights
+## 📈 Key Insights
 
-Certain items are frequently purchased together → useful for cross-selling
+1. Certain items are frequently purchased together → useful for cross-selling
 
-Peak shopping months identified → helps in inventory planning
+2. Peak shopping months identified → helps in inventory planning
 
-Most customers purchase a moderate number of items per visit
+3. Most customers purchase a moderate number of items per visit
 
-High lift rules indicate strong product associations
+4. High lift rules indicate strong product associations
 
-💡 Applications
+## 💡 Applications
 
-Product recommendation systems
+1) Product recommendation systems
 
-Store layout optimization
+2) Store layout optimization
 
-Targeted marketing & promotions
+3) Targeted marketing & promotions
 
-Inventory management
+4) Inventory management
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 Deploy as a Streamlit Web App
 
@@ -94,7 +95,8 @@ Add real-time recommendation system
 
 Integrate customer segmentation (clustering)
 
-🙌 Conclusion
+## 🙌 Conclusion
+
 This project demonstrates how data-driven insights can help businesses understand customer behavior and improve decision-making using Market Basket Analysis.
 
 If you like this project, consider giving it a ⭐ on GitHub!
